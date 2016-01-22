@@ -40,9 +40,3 @@ var port = process.env.PORT || 5000;
 http.listen(port, function(){
   console.log('listening on port: ', port);
 });
-
-// 34.0192129 lat
-// -118.4942882 long
-
-// 34.0192699 latitude
-// -118.4943795 long
