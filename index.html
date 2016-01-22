@@ -74,7 +74,7 @@
   //geo callbacks
   var success = function(pos) {
     console.log('watchPosition successful:', pos.coords.latitude + "," + pos.coords.longitude);
-    socket.emit('chat-message', username + "'s position: ' " pos.coords.latitude + "," + pos.coords.longitude);
+    socket.emit('chat-message', username + "'s position: " + pos.coords.latitude + "," + pos.coords.longitude);
   };
 
   var error = function(err) {
