@@ -23,7 +23,12 @@ io.on('connection', function(socket){
   socket.on('chat-message', function(data){
     console.log('message: ' + data);
 
-    if (Math.abs(data.lat - target.lat) < 0.000025 && Math.abs(data.long - target.long) < 0.000025) {
+    // if (Math.abs(data.lat - target.lat) < 0.000025 && Math.abs(data.long - target.long) < 0.000025) {
+    //   io.emit('chat-broadcast', data.username + " COLLISION WITH TARGET!");
+    // } else {
+    //   io.emit('chat-broadcast', data.username + " position: " + data.lat + data.long);
+    //}
+    if (withinRange(target.lat, target.long, 34.019990, -118.493925, 10)){
       io.emit('chat-broadcast', data.username + " COLLISION WITH TARGET!");
     } else {
       io.emit('chat-broadcast', data.username + " position: " + data.lat + data.long);
